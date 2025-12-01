@@ -3,6 +3,29 @@ body{
     background: white;
 }
 
+/* html{
+    scroll-padding-top: 120px;
+} */
+
+#about,
+#education,
+#work-placement,
+#skils-and-achievements,
+#languages,
+#contact-information,
+#hobbies{
+    scroll-margin-top: 40vh;
+}
+
+/* meybe I need to replace it, but !CHECK! when I put pictures here */
+/* some of the sections wasn't in the centre of page when I clicked, I NEED TO check !!!! */
+#projects{
+    scroll-margin-top: 18vh;
+}
+
+
+
+/* changes for title page with hero container (! maybe I should put some pictures begind - check!!!) */
 .hero-section{
     min-height: calc(100vh - 70px);
     display: flex;
@@ -24,18 +47,6 @@ body{
 .hero-section p.mb-1 {
     font-size: 1rem;
     max-width: 32rem;
-}
-
-.hero-photo-wrapper {
-    display: inline-block;
-    padding: 0.5rem;
-    border-radius: 1.25rem;
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
-}
-
-.hero-photo-wrapper img {
-    border-radius: 1rem;
 }
 
 .center-list{
