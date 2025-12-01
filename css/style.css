@@ -1,15 +1,41 @@
 body{
-    padding-top: 10px;
-    background: whitesmoke;
-    /* transition: background 0.3s linear; */
+    padding-top: 70px;
+    background: white;
 }
 
 .hero-section{
-    /* min-height: 60vh; */
+    min-height: calc(100vh - 70px);
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     padding: 3rem 0;
+}
+
+.hero-section h1{
+    font-size: clamp(2.6rem, 4vw, 3.2rem);
+    font-weight: 600;
+}
+
+.hero-section h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.hero-section p.mb-1 {
+    font-size: 1rem;
+    max-width: 32rem;
+}
+
+.hero-photo-wrapper {
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+.hero-photo-wrapper img {
+    border-radius: 1rem;
 }
 
 .center-list{
@@ -17,16 +43,58 @@ body{
     text-align: left;
 }
 
-/* deep emerald: #013220
-.bottom-gradient {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
 
-    background: linear-gradient(
-        to bottom,
-        rgba(245, 245, 220, 1) 0%,    /* start same as body (beige) */
-        rgba(1, 50, 32, 0.0) 30%,    /* almost no green yet */
-        rgba(1, 50, 32, 0.6) 70%,    /* strong emerald */
-        #013220 100%                 /* full deep emerald at bottom */
-    );
-} */
+/* my nav bar tranparent colour */
+.navbar-transparent{
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.3s ease;
+}
+
+
+/* my buttons also transparent colour to mutch my nav bar */
+/* !important to override default buttons, but I need to check stakoverlow again fo rbtter solution*/
+.btn.project-btn {
+    background: rgba(0, 0, 0, 0.6) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+
+
+.btn.project-btn:hover { 
+    background: rgba(0, 0, 0, 0.8) !important;  
+    border-color: rgba(255, 255, 255, 0.6) !important; 
+    transform: translateY(-2px); 
+}
+
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-img {
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+

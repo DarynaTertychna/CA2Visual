@@ -17,7 +17,7 @@
 
 
 
-    <nav class="navbar navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-dark navbar-transparent fixed-top">
         <div class="container">
 
         <!---button for list of my section---->>
@@ -71,7 +71,7 @@
 
 
     <!----hero section 1 here----->
-    <section class="hero-section">
+    <section class="hero-section reveal">
         <div class="container">
             <div class="row align-items-center">
 
@@ -100,7 +100,7 @@
 
 
     <!----section 2 about me----->
-    <div class="container text-center" id="about">
+    <div class="container text-center reveal" id="about">
         <h4>About me</h4>
             <p>I'm currently pursuing a Bachelor's degree in Computing with Software Development.
             During years of studies I continuously improving my skiils and knoledge in this field.
@@ -113,7 +113,7 @@
 
 
     <!----section 3 education----->
-    <div class="container text-center" id="education">
+    <div class="container text-center reveal" id="education">
         <h4>Education</h4>
         <p>Technological University Dublin</p>
         <p>Bachelor of Science (Honours) in Computing with Software</p>
@@ -124,91 +124,47 @@
     <br><br><br>
 
     <!----section 4 my projects----->
-    <div class="container text-center" id="projects">
+    <div class="container text-center reveal" id="projects">
         <h4>Projects</h4>
+        <p>Here is my recent projects. I have worked on web project for language schools, sweet shop 
+            and SplitReward application</p>
+            <div class="row g-4 mt-3">
+                <div class="col-md-4">
+                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
+                        data-bs-toggle="modal" data-bs-target="#modal1">
+                </div>
 
-        <div>
-            <h6>Language School Project</h6>
-            <p>Simple web project with good UI for foreign language school.</p>
-        <!--button here. for a drop down pictures-->
-        <button class="btn btn-primary mb-3"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#project1"
-                aria-expanded="false">
-                Show this project
-        </button>
-        
+                <div class="col-md-4">
+                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
+                        data-bs-toggle="modal" data-bs-target="#modal2">
+                </div>
 
-        <div class="collapse" id="project1">
-            <p class="text-start">
-                This is my project for langusge school.
-            </p>
+                <div class="col-md-4">
+                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
+                        data-bs-toggle="modal" data-bs-target="#modal3">
+                </div>
 
-            <img src="images/Screenshot 2025-12-01 194646.png" 
-                alt="project"
-                class="img-fluid mx-auto d-block"
-                style="max-width: 100%; height: auto;">
-        </div>
-        </div>
+                <div class="col-md-4">
+                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
+                        data-bs-toggle="modal" data-bs-target="#modal4">
+                </div>
 
-        <br><br>
+                <div class="col-md-4">
+                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
+                        data-bs-toggle="modal" data-bs-target="#modal5">
+                </div>
 
-        <div>
-            <h6>Sweet Shop Project</h6>
-        <!--button here. for a drop down pictures-->
-        <button class="btn btn-primary mb-3"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#project2"
-                aria-expanded="false">
-                Show this project
-        </button>
+                <div class="col-md-4">
+                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
+                        data-bs-toggle="modal" data-bs-target="#modal6">
+                </div>
 
-
-        <div class="collapse" id="project2">
-            <p class="text-start">
-                This is my project for langusge school.
-            </p>
-
-            <img src="images/Screenshot 2025-12-01 194646.png" 
-                alt="project"
-                class="img-fluid mx-auto d-block"
-                style="max-width: 100%; height: auto;">
-        </div>
-        </div>
-        
-
-        <br><br>
-        <div>
-            <h6>SplitPay Project</h6>
-        <!--button here. for a drop down pictures-->
-        <button class="btn btn-primary mb-3"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#project3"
-                aria-expanded="false">
-                Show this project
-        </button>
-
-
-        <div class="collapse" id="project3">
-            <p class="text-start">
-                This is my project for langusge school.
-            </p>
-
-            <img src="images/Screenshot 2025-12-01 194646.png" 
-                alt="project"
-                class="img-fluid mx-auto d-block"
-                style="max-width: 100%; height: auto;">
-        </div>
-        </div>
-
+            </div>
     </div>
     <br><br><br>
 
     <!----section 5 work placement----->
-    <div class="container text-center" id="work-placement">
+    <div class="container text-center reveal" id="work-placement">
         <h4>Work placement</h4>
         <p>Mastercard</p>
         <p>Software Engineer Intern</p>
@@ -225,7 +181,7 @@
 
     <br><br><br>
     <!----section 6 skils and achievements----->
-    <div class="container text-center" id="skils-and-achievements">
+    <div class="container text-center reveal" id="skils-and-achievements">
         <h4>Skils and achievements</h4>
         <p></p>
     </div>
@@ -234,7 +190,7 @@
     <br><br><br>
     <!----section 7 languages----->
     <div class="bottom-gradient">
-        <div class="container text-center" id="languages">
+        <div class="container text-center reveal" id="languages">
                 <h4>Languages</h4>
                 <p>
                     <ul class="center-list">
@@ -250,7 +206,7 @@
 
     <br><br><br>
     <!----section 8 contact information(detailed)----->
-    <div class="container text-center" id="contact-information">
+    <div class="container text-center reveal" id="contact-information">
         <h4>Contact information</h4>
         <p>darynatertychna@gmail.com</p>
         <a href="https://www.linkedin.com/in/darynatertychna/?jobid=1234">LinkedIn</a>
@@ -260,7 +216,7 @@
 
     <br><br><br>
     <!----section 9 hobbies----->
-    <div class="container text-center" id="hobbies">
+    <div class="container text-center reveal" id="hobbies">
         <h4>Hobbies</h4>
         <p>I have a lot of hobbies, here is my top picks for now:</p>
         <ul class="center-list">
@@ -296,6 +252,51 @@
     </div> -->
 
     
+    <!-- modal for pictures and modal for contact -->
+    <div class="modal fade" id="modal1" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal3" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal4" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal5" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal6" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+
+
 
 
     <!--footer here-->

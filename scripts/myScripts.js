@@ -15,6 +15,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    
+    if (window.scrollY > 50) {
+        navbar.classList.add("navbar-scrolled");
+    } else {
+        navbar.classList.remove("navbar-scrolled");
+    }
+});
+
+
+
+
 // window.addEventListener("scroll", function () {
 //     let scrollPos = window.scrollY;
 //     let maxScroll = document.body.scrollHeight - window.innerHeight;
@@ -29,3 +42,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //     document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 // });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    const appearOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    reveals.forEach(el => appearOnScroll.observe(el));
+
+});
+
