@@ -1,0 +1,32 @@
+body{
+    padding-top: 10px;
+    background: whitesmoke;
+    /* transition: background 0.3s linear; */
+}
+
+.hero-section{
+    /* min-height: 60vh; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 3rem 0;
+}
+
+.center-list{
+    display: inline-block;
+    text-align: left;
+}
+
+/* deep emerald: #013220
+.bottom-gradient {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(245, 245, 220, 1) 0%,    /* start same as body (beige) */
+        rgba(1, 50, 32, 0.0) 30%,    /* almost no green yet */
+        rgba(1, 50, 32, 0.6) 70%,    /* strong emerald */
+        #013220 100%                 /* full deep emerald at bottom */
+    );
+} */
