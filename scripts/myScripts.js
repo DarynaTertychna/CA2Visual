@@ -1,4 +1,7 @@
+// deadline 12th, if still have time - !!! combine listeners, too many of them
+
 //passed - working fine
+
 document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   const navbarCollapse = document.getElementById('navbarNav');
@@ -33,7 +36,7 @@ window.addEventListener("scroll", function () {
 document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.querySelector(".navbar");
     const toggler = document.querySelector(".navbar-toggler");
-    const sections = document.querySelectorAll(".page-section");
+    const sections = document.querySelectorAll(".pages");
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
     if (toggler && navbar) {
@@ -46,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // reference for var https://stackoverflow.com/questions/30473141/difference-between-getelementsbyclassname-and-queryselectorall
     // scroll and reveal text when scrolling
     function scrollreveal() {
-        var elems = document.querySelectorAll(".revealsl");
+        const elems = document.querySelectorAll(".revealsl");    //var? 
 
         for (var i = 0; i < elems.length; i++) {
             var rect = elems[i].getBoundingClientRect();
@@ -105,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () =>
 document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById("themeSwitch");
 
-
+//need storage, otherwise my theme disapearing somewhere
     let theme = localStorage.getItem("theme");
 
     if (theme === "dark") {
@@ -144,11 +147,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    document.addEventListener("mousemove", (e) => {
+    document.addEventListener("mousemove", (mov) => {
         if (!magnifyActive) return;
 
-        lens.style.left = (e.clientX - lens.offsetWidth / 2) + "px";
-        lens.style.top = (e.clientY - lens.offsetHeight / 2) + "px";
+        lens.style.left = (mov.clientX - lens.offsetWidth / 2) + "px";
+        lens.style.top = (mov.clientY - lens.offsetHeight / 2) + "px";
     });
 });
 
@@ -211,7 +214,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         })
 
-        .then(data => {
+        .then(data => 
+            {
             if (!data) return;
 
             const temp = Math.round(data.main.temp);
@@ -252,42 +256,43 @@ document.addEventListener("DOMContentLoaded", () => {
 // https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 // https://www.w3schools.com/js/js_htmldom_events.asp
 // contact me bytton near magnifying glass
+// message opens twice, though I don't have double function???
 document.addEventListener("DOMContentLoaded", () => {
-    const floatBtn = document.getElementById("contactFloatBtn");
-    const overlay = document.getElementById("contactOverlay");
-    const closeBtn = overlay ? overlay.querySelector(".close-btn") : null;
-    const modalForm = document.getElementById("modalContactForm");
+    const floatingButton = document.getElementById("contactFloatBtn");
+    const overlay = document.getElementById("contactOverlay"); //over my background and everything
+    const xButton = overlay ? overlay.querySelector(".close-btn") : null;
+    const contactMelForm = document.getElementById("modalContactForm");
 
     if (!overlay) return;
 
-    const openModal = () => {
+    const openForm = () => {
         overlay.classList.add("show");
     };
 
-    const closeModal = () => {
+    const closeForm = () => {
         overlay.classList.remove("show");
     };
 
-    if (floatBtn) {
-        floatBtn.addEventListener("click", openModal);
+    if (floatingButton) {
+        floatingButton.addEventListener("click", openForm);
     }
 
-    if (closeBtn) {
-        closeBtn.addEventListener("click", closeModal);
+    if (xButton) {
+        xButton.addEventListener("click", closeForm);
     }
 
-    overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) {
-            closeModal();
+    overlay.addEventListener("click", (mes) => {
+        if (mes.target === overlay) {
+            closeForm();
         }
     });
 
-    if (modalForm) {
-        modalForm.addEventListener("submit", (e) => {
-            e.preventDefault();
+    if (contactMelForm) {
+        contactMelForm.addEventListener("submit", (mes) => {
+            mes.preventDefault();
             alert("Your message was sent! Wait for an answer shortly!");
-            modalForm.reset();
-            closeModal();
+            contactMelForm.reset();
+            closeForm();
         });
     }
 });

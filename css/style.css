@@ -226,17 +226,15 @@ body.dark-theme .theme-switch-inner {
     transition: opacity 0.3s ease;
 }
 
-.theme-icon-sun {
+.theme-icon-sun, .theme-icon-moon
+ {
     opacity: 1;
 }
 
-body.dark-theme .theme-icon-sun {
-    opacity: 0.4;
-}
-
-body.dark-theme .theme-icon-moon {
+/* .theme-icon-moon {
     opacity: 1;
-}
+} */
+
 
 /* switch-knob */
 .theme-switch-knob {
@@ -253,7 +251,7 @@ body.dark-theme .theme-icon-moon {
 
 /* knob to switch theme */
 body.dark-theme .theme-switch-knob {
-    transform: translateX(32px);
+    transform: translateX(35px); /* 32 looks okay too */
 }
 
 
