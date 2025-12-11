@@ -1,3 +1,4 @@
+//passed - working fine
 document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   const navbarCollapse = document.getElementById('navbarNav');
@@ -14,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
+//passed - working fine
+// https://www.w3schools.com/jsref/prop_win_scrolly.asp
 window.addEventListener("scroll", function () {
     const navbar = document.querySelector(".navbar");
     
@@ -26,36 +28,266 @@ window.addEventListener("scroll", function () {
 });
 
 
-
-
-// window.addEventListener("scroll", function () {
-//     let scrollPos = window.scrollY;
-//     let maxScroll = document.body.scrollHeight - window.innerHeight;
-
-//     let percent = scrollPos / maxScroll;
-//     percent = Math.min(Math.max(percent, 0), 1);
-
-
-//     let r = Math.round(245 + (1 - 245) * percent);
-//     let g = Math.round(245 + (50 - 245) * percent);
-//     let b = Math.round(220 + (32 - 220) * percent);
-
-//     document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-// });
-
+//passed - working fine
+// nav bar for small displays
 document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".navbar");
+    const toggler = document.querySelector(".navbar-toggler");
+    const sections = document.querySelectorAll(".page-section");
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
-    const reveals = document.querySelectorAll('.reveal');
-
-    const appearOnScroll = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
+    if (toggler && navbar) {
+        toggler.addEventListener("click", () => {
+            navbar.classList.toggle("show-mist");
         });
-    }, { threshold: 0.2 });
+    }
 
-    reveals.forEach(el => appearOnScroll.observe(el));
+
+    // reference for var https://stackoverflow.com/questions/30473141/difference-between-getelementsbyclassname-and-queryselectorall
+    // scroll and reveal text when scrolling
+    function scrollreveal() {
+        var elems = document.querySelectorAll(".revealsl");
+
+        for (var i = 0; i < elems.length; i++) {
+            var rect = elems[i].getBoundingClientRect();
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            // when element is a bit inside the viewport
+            if (rect.top < windowHeight - 80) {
+                elems[i].classList.add("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", scrollreveal);
+    window.addEventListener("load", scrollreveal);
 
 });
 
+//passed - working fine
+// fix to smooth scrool one section
+document.addEventListener("DOMContentLoaded", () => 
+    {
+    const btn = document.getElementById("backToTHETop");
+
+    btn.addEventListener("click", () => 
+        {
+        document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
+    });
+
+    const sections = document.querySelectorAll(".pages");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) 
+                    {
+
+                    const currentID = entry.target.id;
+
+                    if (currentID === "about") {
+                        btn.style.display = "none";
+                    } else {
+                        btn.style.display = "flex";
+                    }
+                }
+            });
+        },
+        { threshold: 0.6 } // maybe 0.9? check!?
+    );
+
+    sections.forEach(s => observer.observe(s));
+});
+
+
+//passed - working fine (knob???)
+// function for light or dark theme switch 
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("themeSwitch");
+
+
+    let theme = localStorage.getItem("theme");
+
+    if (theme === "dark") {
+        document.body.classList.add("dark-theme");
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+
+        if (document.body.classList.contains("dark-theme")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    });
+});
+
+
+
+//passed - working fine
+document.addEventListener("DOMContentLoaded", () => {
+    const lens = document.getElementById("magnifyGlass");
+    const magnifyBtn = document.getElementById("magnifyBtn");
+
+    let magnifyActive = false;
+
+    magnifyBtn.addEventListener("click", () => {
+        magnifyActive = !magnifyActive;
+
+        if (magnifyActive) {
+            lens.classList.add("zoom");
+            lens.style.opacity = "1";
+        } else {
+            lens.classList.remove("zoom");
+            lens.style.opacity = "0";
+        }
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (!magnifyActive) return;
+
+        lens.style.left = (e.clientX - lens.offsetWidth / 2) + "px";
+        lens.style.top = (e.clientY - lens.offsetHeight / 2) + "px";
+    });
+});
+
+
+
+//passed - working fine
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".education-mod");
+    const panels = document.querySelectorAll(".education-box");
+
+    if (!tabs.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const year = tab.dataset.year;
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            panels.forEach(panel => {
+                if (panel.dataset.year === year) {
+                    panel.classList.add("active");
+                } else {
+                    panel.classList.remove("active");
+                }
+            });
+        });
+    });
+});
+
+
+//passed - working fine (api lags possible, cuz i'm on free plan there)
+// reference - https://openweathermap.org/current
+// reference - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+// 29c8736430e290d03ec9676e1dd1569a
+// weather dynamic feature
+// Dublin for my own location
+document.addEventListener("DOMContentLoaded", () => {
+    const weatherShow = document.getElementById("weather");
+    if (!weatherShow) return;
+
+
+    const city = "Dublin";
+    const countryCode = "IE";
+
+
+    const apiKey = "29c8736430e290d03ec9676e1dd1569a"; 
+    
+    
+    //link from their api
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&units=metric&appid=${apiKey}`;
+
+
+    fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                console.log("Weather API error:", res.status);
+                return;
+            }
+
+            return res.json();
+
+        })
+
+        .then(data => {
+            if (!data) return;
+
+            const temp = Math.round(data.main.temp);
+            const description = data.weather[0].description || "";
+
+                let icon = "⛅";
+                const d = description.toLowerCase();
+
+                if (d.includes("rain")) icon = "☔";
+                else if (d.includes("clear")) icon = "🌞";
+                else if (d.includes("snow")) icon = "⛄";
+                else if (d.includes("storm") || d.includes("thunder")) icon = "🌪️";
+                else if (d.includes("cloud")) icon = "☁️";
+
+                weatherShow.textContent = `${city}: ${temp}°C ${icon}`;
+        })
+        .catch(err => console.log("Weather isn't found", err));
+});
+
+//passed - working fine
+// message after submit contact info and message to me
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("modalContactForm"); //by ID
+    if (!form) return;
+
+    form.addEventListener("submit", function (f) {
+        f.preventDefault(); // it to stop my page from reloading
+
+        alert("Your message was sent! Wait for an answer shortly!");
+
+        form.reset(); // resetting my forsm and cleaning whole thing
+    });
+});
+
+//passed - working fine
+// references: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+// https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events#event_bubbling
+// https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+// https://www.w3schools.com/js/js_htmldom_events.asp
+// contact me bytton near magnifying glass
+document.addEventListener("DOMContentLoaded", () => {
+    const floatBtn = document.getElementById("contactFloatBtn");
+    const overlay = document.getElementById("contactOverlay");
+    const closeBtn = overlay ? overlay.querySelector(".close-btn") : null;
+    const modalForm = document.getElementById("modalContactForm");
+
+    if (!overlay) return;
+
+    const openModal = () => {
+        overlay.classList.add("show");
+    };
+
+    const closeModal = () => {
+        overlay.classList.remove("show");
+    };
+
+    if (floatBtn) {
+        floatBtn.addEventListener("click", openModal);
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+    }
+
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            closeModal();
+        }
+    });
+
+    if (modalForm) {
+        modalForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Your message was sent! Wait for an answer shortly!");
+            modalForm.reset();
+            closeModal();
+        });
+    }
+});

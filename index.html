@@ -10,58 +10,84 @@
   </head>
 
 
-  <body>
+  <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100" tabindex="0" data-bg="images/background-screenshot.png">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="scripts/myScripts.js"></script>
 
 
 
 
-    <nav class="navbar navbar-dark navbar-transparent fixed-top">
+    <nav class="navbar navbar-dark navbar-transparent navbar-expand-lg fixed-top">
         <div class="container">
 
-        <!---button for list of my section----> <img width="50px" src="images/giphy.webp" alt="">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+            <a class="navbar-brand d-flex align-items-center" href="#top">
+                <img width="50" src="images/giphy.webp" alt="Christmas tree">
+                <!-- weather dymanic feature here -->
+                 <!-- loadinf if waiting time is long, so user get an info what's going on -->
+                <span id="weather" class="weather d-none d-sm-inline">
+                    Loading…
+                </span>
+            </a>
+            
+            <form class="d-flex ms-3 nav-search">
+                <input class="form-control form-control-sm nav-search-input" 
+                    type="search" 
+                    placeholder="Search…" 
+                    aria-label="Search">
+            </form>
+        <!---button for list of my section---->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#about">About me</a>
                     </li>
 
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#education">Education</a>
                     </li>
 
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
 
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#work-placement">Work Placement</a>
                     </li>
 
-                    <li class="navbar-item">
-                        <a class="nav-link" href="#skils-and-achievements">Skils and Achievements</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills-and-achievements">Skills and Achievements</a>
                     </li>
 
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#languages">Languages</a>
                     </li>
 
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact-information">Contact Information</a>
                     </li>
 
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#hobbies">Hobbies</a>
                     </li>
                     
                     
                 </ul>
+
+            <button id="themeSwitch" class="theme-switch" aria-label="Toggle dark mode">
+                <span class="theme-switch-inner">
+                    <span class="theme-icon theme-icon-sun">☀️</span>
+                    <span class="theme-icon theme-icon-moon">🌚</span>
+                    <span class="theme-switch-knob"></span>
+                </span>
+            </button>
+
 
             </div>
 
@@ -71,7 +97,7 @@
 
 
     <!----hero section 1 here----->
-    <section class="hero-section reveal">
+    <section class="hero-section revealsl">
         <div class="container">
             <div class="row align-items-center">
 
@@ -88,174 +114,573 @@
                 </div> 
 
                 <div class="col-md-6 text-center">
-                    <img src="images/Screenshot 2024-09-21 182838ggg.png" 
+                    <img src="images/CV-photo.png" 
                     class="img-fluid rounded-circle" 
                     alt="cv photo"
                     style="width: 290px; height: 290px; object-fit: cover;">
                 </div>
             </div>
         </div>
+
+
+        
+
     </section>
     <!----end of hero section----->
 
 
+
+
+
     <!----section 2 about me----->
-    <div class="container text-center reveal" id="about">
-        <h4>About me</h4>
-            <p>I'm currently pursuing a Bachelor's degree in Computing with Software Development.
-            During years of studies I continuously improving my skiils and knoledge in this field.
-            I'm always learning new technologies, framewords and practices.
+    <section class="pages" id="about">
+        <div class="container text-center revealsl">
+            <h4>About me</h4>
+            <br>
+            <p class="font-size">Hi. I'm Daryna👋. I'm 4th year Computing with Software Development student in 
+                Technological University Dublin. I finished my internship as a software developer last year and 
+                decided to continue my path in this field. Right now I'm working on my final year's project - Crime Map prediction
+                and hopping to add that application to my portfolio at the end of the 2026 year. 
             </p>
-    </div>
+        </div>
+    </section>
+
+
+    
     <!----end of hero section----->
 
-    <br><br><br> 
+    <br><br><br>
 
 
     <!----section 3 education----->
-    <div class="container text-center reveal" id="education">
-        <h4>Education</h4>
-        <p>Technological University Dublin</p>
-        <p>Bachelor of Science (Honours) in Computing with Software</p>
-        <p>September 2022 - May 2026</p>
+    
 
-        <br><br>
+    <section class="pages" id="education">
+        <div class="container revealsl">
 
-        <h5>Module grades:</h5>
-        <ul class="center-list">
-            <li>DeVops - B</li>
-            <li>C++ - C</li>
-            <li>add more later</li>
-        </ul>
-    </div>
-    <!----end of hero section----->
+            <h4 class="text-center mb-4">Education</h4>
+                <!-- 1 -->
+                <div class="infrow">
+                    <div class="infcard">
+                        <div class="timeline-meta">
+                            <span class="title-company">Technological University Dublin</span>
+                            <span class="timeline-badge">Current</span>
+                        </div>
+                        <h5 class="timeline-title"> <a href="https://www.tudublin.ie/study/undergraduate/courses/computing-with-software-development/"
+                            target="_blank"
+                             rel="noopener noreferrer">   <!--this one to open link in the tab, notin the same tab--> 
+                            Bachelor of Science (Honours) in Computing with Software</a>
+                        </h5>
+
+                        <span class="timeline-dates">2022-2026</span>
+                        <p class="font-size">
+                            Learning how to design and create the software. Achievienh knowledge how to tests, debug and check apps.
+                        </p>
+
+                        <div class="cust-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">DevOps</span>
+                            <span class="tag">Database</span>
+                            <span class="tag">Database</span>
+                        </div>
+                    </div>
+                    <a class="cust-icons"
+                        href="https://www.tudublin.ie/study/undergraduate/courses/computing-with-software-development/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        💻
+                    </a>
+                    <!-- <div class="cust-icons">💻</div> -->
+                </div>
+
+            <div class="grades text-center">
+                <h4>Module grades</h4>
+
+                <!-- here is all 3 years and so on, folder later? idk -->
+                <div class="modules-tab" id="eduTabs">
+                    <button class="education-mod active" data-year="1">Year #1</button>
+                    <button class="education-mod" data-year="2">Year #2</button>
+                    <button class="education-mod" data-year="3">Year #3</button>
+                    <button class="education-mod" data-year="4">Year #4</button>
+                </div>
+
+                <!-- list of my modules, just 3 of them must be enough? !!!Check this section before submitting, maybe I need add more moduler from dtudent portal-->
+                <!-- 1 -->
+                <div class="infcard">
+                    <div class="education-box active" data-year="1">
+                        <ul class="center-list font-size">
+                            <li>Statistics – A</li>
+                            <li>Software Development – A</li>
+                            <li>Critical Skills Development – A</li>
+                            <br>
+                            <div class="cust-tags">
+                                <span class="tag">GPA - 3+</span>
+                            </div>
+                        </ul>
+                    </div>
+
+
+                    <!-- 2 -->
+                    <div class="education-box" data-year="2">
+                        <ul class="center-list font-size">
+                            <li>Management Science – A</li>
+                            <li>Discrete Mathematics – A</li>
+                            <li>Project – A</li>
+                            <br>
+                            <div class="cust-tags">
+                                <span class="tag">GPA - 3+</span>
+                            </div>
+                        </ul>
+                    </div>
+
+
+                    <!-- 3 -->
+                    <div class="education-box" data-year="3">
+                        <ul class="center-list font-size">
+                            <li>Experiential Learning – Pass</li>
+                            <li>Operating Systems – B+</li>
+                            <li>Big Data Technologies – B+</li>
+                            <br>
+                            <div class="cust-tags">
+                                <span class="tag">GPA - 3+</span>
+                            </div>
+                        </ul>
+                    </div>
+
+
+                    <!-- 4 -->
+                    <div class="education-box" data-year="4">
+                        <ul class="center-list font-size">
+                            <li>Final Year Project – to be updated</li>
+                            <li>DevOps – B</li>
+                            <li>More modiles will be added later</li>
+                            <br>
+                            <div class="cust-tags">
+                                <span class="tag">GPA - 3+</span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+
+            <p class="text-center">A location of my University</p>
+             <div class="text-center">  <!-- to center the map -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2384.913608862384!2d-6.3660300223952655!3d53.291082578855985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670b4b8ec071f5%3A0xb6cf7501e0d9522a!2sTU%20Dublin%2C%20Tallaght!5e0!3m2!1sen!2sie!4v1764703515891!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+           
+
+        </div>
+    </section>
 
     <br><br><br>
 
+
+
     <!----section 4 my projects----->
-    <div class="container text-center reveal" id="projects">
-        <h4>Projects</h4>
-        <p>Here is my recent projects. I have worked on web project for language schools, sweet shop 
-            and SplitReward application. Also I have worked on some animation 3D objects in Blender</p>
-            <div class="row g-4 mt-3">
-                <div class="col-md-4">
-                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
-                        data-bs-toggle="modal" data-bs-target="#modal1">
-                </div>
+    <section class="pages" id="projects">
+        <div class="container text-center revealsl" >
+            <h4>Projects</h4>
+            <p class="font-size">Here is my recent projects. I have worked on web project for language schools, sweet shop 
+                and SplitReward application. Also I have worked on some animation 3D objects in Blender</p>
+                <div class="row g-4 mt-3">
+                    <div class="col-md-4">
+                        <img src="images/project year 4.png" class="img-fluid picture-size"
+                            data-bs-toggle="modal" data-bs-target="#modal1">
+                    </div>
 
-                <div class="col-md-4">
-                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
-                        data-bs-toggle="modal" data-bs-target="#modal2">
-                </div>
+                    <div class="col-md-4">
+                        <img src="images/project 4.png" class="img-fluid picture-size"
+                            data-bs-toggle="modal" data-bs-target="#modal2">
+                    </div>
 
-                <div class="col-md-4">
-                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
-                        data-bs-toggle="modal" data-bs-target="#modal3">
-                </div>
+                    <div class="col-md-4">
+                        <img src="images/crimemap.png" class="img-fluid picture-size"
+                            data-bs-toggle="modal" data-bs-target="#modal3">
+                    </div>
 
-                <div class="col-md-4">
-                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
-                        data-bs-toggle="modal" data-bs-target="#modal4">
-                </div>
+                    <div class="col-md-4">
+                        <img src="images/project2.png" class="img-fluid picture-size"
+                            data-bs-toggle="modal" data-bs-target="#modal5">
+                    </div>
 
-                <div class="col-md-4">
-                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
-                        data-bs-toggle="modal" data-bs-target="#modal5">
-                </div>
+                    <div class="col-md-4">
+                        <img src="images/calculator.png" class="img-fluid picture-size"
+                            data-bs-toggle="modal" data-bs-target="#modal6">
+                    </div>
 
-                <div class="col-md-4">
-                    <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid portfolio-img"
-                        data-bs-toggle="modal" data-bs-target="#modal6">
                 </div>
-
-            </div>
-    </div>
+        </div>
+    </section>
+    
     <br><br><br>
 
     <!----section 5 work placement----->
-    <div class="container text-center reveal" id="work-placement">
-        <h4>Work placement</h4>
-        <p>Mastercard</p>
-        <p>Software Engineer Intern</p>
-        <p>February 2025 - July 2025 (6 months)</p>
-        <p>I have gained knoledge in Java, Kafka, and API development. I have got real experience working 
-            with corporate DevCloud environment, Jenkins and GitHub. Observed and participated in 
-            corporate software delivery and deployment processes. Learned to use unfamiliar tools 
-            (JMeter, Dynatrace, Insomnia) efficiently through self-learning. Participated in hackathons 
-            and innovation challenges, contributing ideas and technical implementation to address real-world 
-            business problems. 
-        </p>
-    </div>
+    <section class="pages" id="work-placement">
+        <div class="container revealsl">
+
+            <h4 class="text-center mb-4">Work Experience</h4>
+                <!-- 1 -->
+                <div class="infrow">
+                    <div class="infcard">
+                        <div class="timeline-meta">
+                            <a class="title-company"
+                                href="https://careers.mastercard.com/us/en/internships"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                Mastercard
+                            </a>
+
+                            <span class="timeline-badge">2025</span>
+                        </div>
+                        <h5 class="timeline-title">Software Engineer Intern</h5>
+                        <span class="timeline-dates">Feb 2025 – Jul 2025</span>
+                        <p class="font-size">
+                            Working with Java / Spring Boot services, Kafka messaging and API development
+                            in a large-scale payments environment. Involved in CI/CD pipeline, DevCloud and
+                            performance testing.
+                        </p>
+                        <div class="cust-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">Kafka</span>
+                            <span class="tag">DevOps</span>
+                        </div>
+                    </div>
+                    <div class="tag-icons">
+                        <a href="https://careers.mastercard.com/us/en/internships"
+                            target="_blank"
+                             rel="noopener noreferrer">
+                            <img class="icons" src="images/mastercard.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="infrow">
+                    <div class="infcard">
+                        <div class="timeline-meta">
+                            <span class="title-company">Freelance</span>
+                            <span class="timeline-badge soft">2022 – NOW</span>
+                        </div>
+                        <h5 class="timeline-title">Junior Web Developer</h5>
+                        <span class="timeline-dates">Project based</span>
+                        <p class="font-size">
+                            Created small websites for local businesses and practice projects.
+                        </p>
+                        <div class="cust-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="tag-icons">💻</div>
+                </div>
+
+            </div>
+    </section>
+
+
+
+    </section>
+
     
 
     <br><br><br>
-    <!----section 6 skils and achievements----->
-    <div class="container text-center reveal" id="skils-and-achievements">
-        <h4>Skils and achievements</h4>
-        <ul class="center-list">
-            <li>My achievement</li>
-            <li>some more</li>
-            <li>and even mooooooore</li>
-    </div>
-    
+ <!----section 6 skillls and achievements----->
+ <!-- put some icons there and change the test with my achievments for some more real -->
+    <section class="pages" id="skills-and-achievements">
+        <div class="container revealsl">
+            <h4 class="text-center mb-4">Skills & Achievements</h4>
+
+            <div class="infrow">
+                <div class="infcard">
+                    <div class="timeline-meta">
+                        <h5 class="timeline-title">Technical Skills</h5>
+                    </div>
+
+                    <p class="font-size">
+                        Gained experience with tools and technologies used in academic and professional field.
+                    </p>
+
+                    <div class="cust-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">AI/ML</span>
+                    </div>
+                </div>
+
+                <div class="cust-icons">⚙️</div>
+            </div>
+
+            <div class="infrow">
+                <div class="infcard">
+                    <div class="timeline-meta">
+                        <h5 class="timeline-title">Achievements</h5>
+                    </div>
+
+                    <p class="font-size">
+                        Successfully finished my internship.
+                    </p>
+
+                    <div class="cust-tags">
+                        <span class="tag">Hackathon</span>
+                        <span class="tag">Intern</span>
+                        <span class="tag">Internship</span>
+                    </div>
+                </div>
+
+                <div class="cust-icons">💼</div>
+            </div>
+
+            <div class="infrow">
+                <div class="infcard">
+                    <div class="timeline-meta">
+                        <h5 class="timeline-title">Soft Skills</h5>
+                    </div>
+
+                    <p class="font-size">
+                        Improved my soft skills.
+                    </p>
+
+                    <div class="cust-tags">
+                        <span class="tag">Communication</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Teamwork</span>
+                        <span class="tag">Time Management</span>
+                    </div>
+                </div>
+
+                <div class="cust-icons">🤝</div>   
+            </div>
+
+        </div>
+    </section>
 
     <br><br><br>
     <!----section 7 languages----->
-    <div class="bottom-gradient">
-        <div class="container text-center reveal" id="languages">
-                <h4>Languages</h4>
-                <p>
-                    <ul class="center-list">
-                        <li>English (Full Professional)</li>
-                        <li>Ukrainian (Native or Bilingual)</li>
-                        <li>Chinese (Limited Working)</li>
-                    </ul>
-                </p>
+
+
+    <section class="pages" id="languages">
+        <div class="container revealsl">
+            <h4 class="text-center mb-4">Languages</h4>
+
+            <div class="infrow">
+                <!-- English -->
+                <article class="infrow">
+                    <div class="infcard">
+                        <div class="timeline-card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-1">English</h5>
+                            <span class="badge rounded-pill bg-light text-dark small">
+                            Full Professional
+                            </span>
+                        </div>
+                        <p class="font-size">
+                            Used in university, work placement and everyday communication.
+                        </p>
+                        <div class="cust-tags">
+                            <span class="tag">Speaking</span>
+                            <span class="tag">Writing</span>
+                            <span class="tag">Technical</span>
+                        </div>
+                    </div>
+                </article>
+                <div class="cust-icons">EN</div>
             </div>
-    </div>
-    
-    
+
+            <!-- Ukrainian -->
+            <div class="infrow">
+                <article class="infrow">
+                    <div class="infcard">
+                        <div class="timeline-card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-1">Ukrainian</h5>
+                            <span class="badge rounded-pill bg-light text-dark small">
+                            Native / Bilingual
+                            </span>
+                        </div>
+                        <p class="font-size">
+                            My native language, used daily with family, friends and for work as well.
+                        </p>
+                        <div class="cust-tags">
+                            <span class="tag">Native</span>
+                            <span class="tag">Fluent</span>
+                        </div>
+                    </div>
+                </article>
+                <div class="cust-icons">UA</div>
+            </div>
+
+
+            <!-- Chinese -->
+            <div class="infrow">
+                <article class="infrow">
+                    <div class="infcard">
+                        <div class="timeline-card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-1">Chinese</h5>
+                            <span class="badge rounded-pill bg-light text-dark small">
+                            Limited Working
+                            </span>
+                        </div>
+                        <p class="font-size">
+                            Able to keep simple conversations and read basic texts.
+                        </p>
+
+                        <div class="cust-tags">
+                            <span class="tag">Speaking</span>
+                            <span class="tag">Reading</span>
+                        </div>
+                    </div>
+                </article>
+                <div class="cust-icons">中文</div>
+            </div>
+    </section>
+
+
+
+
 
     <br><br><br>
     <!----section 8 contact information(detailed)----->
-    <div class="container text-center reveal" id="contact-information">
-        <h4>Contact information</h4>
-        <p>darynatertychna@gmail.com</p>
-        <a href="https://www.linkedin.com/in/darynatertychna/?jobid=1234">LinkedIn</a>
-        <br><br>
-        <button class="btn project-btn" data-bs-toggle="modal" data-bs-target="#contactModal">
-        Contact me
-        </button>
-    </div>
-    
-    <div class="modal fade" id="contactModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content p-4">
-                <h5 class="mb-3">Contact - Daryna Tertychna</h5>
-                <p>Email: darynatertychna@gmail.com</p>
-                <p>Location: Dublin, Ireland</p>
-                <p>Phone: + 85 28 68 660</p>
-                <p>LinkedIn: <a href="...">linkedin.com/in/darynatertychna</a></p>
+    <section class="pages" id="contact-information">
+        <div class="container revealsl">
+
+            <!-- Title + Subtitle -->
+            <div class="text-center mb-5">
+                <!-- <h4 class="contact-subtitle">CONTACT</h4> -->
+                <h2 class="contact-title">Contacts</h2>
+                <p class="contact-desc">
+                    Feel free to contact me anytime. I will respond as soon as possible. At the right side
+                    you can click "Contact me". Thank you.
+                </p>
+            </div>
+            <br>
+
+            <div class="infcard">
+                    <div class="education-box active">
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center">
+                                    <h4 class="mb-0 me-3">LinkedIn: </h4>
+                                    <a href="https://www.linkedin.com/in/darynatertychna/"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                        <img class="contacts-icons" src="images/linkedin-logo.png" alt="linkdin">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <br>
+            <div class="infcard">
+                    <div class="education-box active">
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center">
+                                    <h4 class="mb-0 me-3">Email: darynatertychna@gmail.com</h4>
+
+                                    <a href="mailto:darynatertychna@gmail.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                        <img class="contacts-icons" src="images/download.png" alt="email">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+<br>
+
+            <div class="infcard">
+                    <div class="education-box active">
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center">
+                                    <h4 class="mb-0 me-3">Phone: +85 28 68 660</h4>
+
+                                    <a href="tel:+353852868660"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                        <img class="contacts-icons" src="images/phone.png" alt="phone">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
-    </div>
+
+    </section>
+    
 
 
 
     <br><br><br>
-    <!----section 9 hobbies----->
-    <div class="container text-center reveal" id="hobbies">
-        <h4>Hobbies</h4>
-        <p>I have a lot of hobbies, here is my top picks for now:</p>
-        <ul class="center-list">
-            <li>Game development</li>
-            <li>Oil painting</li>
-            <li>Archery</li>
-            <li>Reading</li>
-            <li>Yoga</li>
-            
-        </ul>
-    </div>
+
+    <section class="pages" id="hobbies">
+        <div class="container revealsl">
+            <h4 class="text-center mb-4">Hobbies</h4>
+
+            <div class="infrow">
+                <div class="infcard">
+                    <p class="font-size">
+                        Game development
+                    </p>
+                </div>
+
+                <div class="cust-icons">🎮</div>
+            </div>
+
+            <div class="infrow">
+                <div class="infcard">
+                    <p class="font-size">
+                        Oil painting
+                    </p>
+                </div>
+
+                <div class="cust-icons">🎨</div>
+            </div>
+
+            <div class="infrow">
+                <div class="infcard">
+                    <p class="font-size">
+                        Archery
+                    </p>
+                </div>
+
+                <div class="cust-icons">🏹</div>   
+            </div>
+
+            <div class="infrow">
+                <div class="infcard">
+                    <p class="font-size">
+                        Reading
+                    </p>
+                </div>
+
+                <div class="cust-icons">📖</div>   
+            </div>
+
+            <div class="infrow">
+                <div class="infcard">
+                    <p class="font-size">
+                        Yoga
+                    </p>
+                </div>
+
+                <div class="cust-icons">🧘‍♀️</div>   
+            </div>
+
+        </div>
+    </section>
+    <!----section 9 hobbies-----> 
     <!----end of hero section----->
 
 
@@ -280,81 +705,125 @@
     </div> -->
 
     
+
+
+
     <!-- modal for pictures and modal for contact -->
     <div class="modal fade" id="modal1" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-transparent border-0">
-            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            <div class="modal-content p-3">
+
+            <img src="images/project year 4.png" class="img-fluid rounded mb-3">
+
+            <h4 class="mb-2">Language School Website</h4>
+            <p class="text-muted small">2025 • Web Development • Frontend + Backend</p>
+
+            <p>
+                This project is a fully functional language school website built using 
+                HTML, CSS, JavaScript, and Bootstrap. It includes a product catalog, 
+                cart functionality, and dynamic UI components.
+            </p>
+
+            <!-- LINK HERE FROM GITHUB MAYBBE -->
+            <a href="#" class="btn btn-primary mt-2">View More Details</a>
+
             </div>
         </div>
     </div>
+
+
     <div class="modal fade" id="modal2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-transparent border-0">
-            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            <div class="modal-content p-3">
+
+            <img src="images/project 4.png" class="img-fluid rounded mb-3">
+
+            <h4 class="mb-2">Blazor project</h4>
+            <p class="text-muted small">2025 • Web Development • Frontend + Backend</p>
+
+            <p>
+                This project is a fully functional game website built using 
+                Blazor, C#.
+            </p>
+
+            <!-- LINK HERE FROM GITHUB MAYBBE -->
+            <a href="#" class="btn btn-primary mt-2">View More Details</a>
+
             </div>
         </div>
     </div>
+
+
     <div class="modal fade" id="modal3" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-transparent border-0">
-            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            <div class="modal-content p-3">
+
+            <img src="images/crimemap.png" class="img-fluid rounded mb-3">
+
+            <h4 class="mb-2">Crime Map Prediction</h4>
+            <p class="text-muted small">2025 • Frontend + Backend</p>
+
+            <p>
+                This project is a final year project with AI features. It shows the map with different 
+                risk zones predicted by ML model.
+            </p>
+
+            <!-- LINK HERE FROM GITHUB MAYBBE -->
+            <a href="#" class="btn btn-primary mt-2">View More Details</a>
+
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal4" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-transparent border-0">
-            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
-            </div>
-        </div>
-    </div>
+
+
     <div class="modal fade" id="modal5" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-transparent border-0">
-            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            <div class="modal-content p-3">
+
+            <img src="images/project2.png" class="img-fluid rounded mb-3">
+
+            <h4 class="mb-2">Shop Website</h4>
+            <p class="text-muted small">2022 • Frontend + Backend</p>
+
+            <p>
+                This project is a django project for a shop.
+            </p>
+
+            <!-- LINK HERE FROM GITHUB MAYBBE? -->
+            <a href="#" class="btn btn-primary mt-2">View More Details</a>
+
             </div>
         </div>
     </div>
+
+
     <div class="modal fade" id="modal6" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-transparent border-0">
-            <img src="images/Screenshot 2024-09-21 182838ggg.png" class="img-fluid rounded">
+            <div class="modal-content p-3">
+
+            <img src="images/calculator.png" class="img-fluid rounded mb-3">
+
+            <h4 class="mb-2">Calculator</h4>
+            <p class="text-muted small">2022 • Frontend + Backend</p>
+
+            <p>
+                This project is my first project - calculator created with python.
+            </p>
+
+            <!-- LINK HERE FROM GITHUB MAYBBE -->
+            <a href="#" class="btn btn-primary mt-2">View More Details</a>
+
             </div>
         </div>
     </div>
-
-
 
 
     <!--footer here-->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
     
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
-            <div class="row mt-3">
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <h6 class="text-uppercase fw-bold mb-4">
-                    <i class="fas fa-gem me-3"></i>
-                </h6>
-                <p>
-                    Should you require any further information, please do not hesitate to contact me.
-                </p>
-                </div>
-
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                
-                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                <p><i class="fas fa-home me-3"></i> Dublin, Ireland</p>
-                <p>
-                    <i class="fas fa-envelope me-3"></i>
-                    darynatertychna@gmail.com
-                </p>
-                <p><i class="fas fa-phone me-3"></i> + 85 28 68 660</p>
-                </div>
-            </div>
-            </div>
-        </section>
+        <!-- <section class="">
+            for now I don't need that info, I have contact form
+        </section> -->
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
             © 2025 Copyright:
             <a class="text-reset fw-bold" href="https://.com/">darynatertychna.com</a>
@@ -363,5 +832,98 @@
     <!--end of footer-->
 
 
+
+    <!-- my mygnifuing glass button -->
+    <button
+        id="magnifyBtn"
+        class="magnify-toggle"
+        style="
+            position: fixed;
+            bottom: 90px;
+            right: 85px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10000;">
+            🔍︎
+    </button>
+
+    
+    <button
+        id="contactFloatBtn"
+        class="contacts-button-magn">
+        <br>
+        Contact Me <br>
+        <br>
+    </button>
+
+    <div id="magnifyGlass">
+        <div id="magnifyContent"></div>
+    </div>
+
+
+    <!-- back to the top button -->
+    <button id="backToTHETop" class="top-butn">
+        𖠰
+    </button>
+
+<!-- contact button on the right side -->
+    <div id="contactOverlay" class="contactover-buttn">
+        <div class="contact-button-over">
+            <button type="button" class="close-btn" aria-label="Close">&times;</button>
+
+            <h3 class="mb-3 text-center">Contact Me</h3>
+
+            <form id="modalContactForm">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text"
+                            class="form-control contact-input"
+                            placeholder="Your Name *"
+                            name="name"
+                            required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="email"
+                            class="form-control contact-input"
+                            placeholder="Your Email *"
+                            name="email"
+                            required>
+                    </div>
+                </div>
+
+                <input type="text"
+                    class="form-control contact-input mt-3"
+                    placeholder="Subject *"
+                    name="subject"
+                    required>
+
+                <textarea class="form-control contact-textarea mt-3"
+                        rows="5"
+                        placeholder="Message *"
+                        name="message"
+                        required></textarea>
+
+                <p class="asterix mt-2">* Required fields</p>
+
+                <div class="text-end mt-4">
+                    <button class="btn contact-submit-btn" type="submit">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
   </body>
+
 </html>
