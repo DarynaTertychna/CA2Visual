@@ -16,18 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-//scrolling, but need a fix? add to ccs maybe?
-// https://www.w3schools.com/jsref/prop_win_scrolly.asp
-// window.addEventListener("scroll", function () {
-//     const navbar = document.querySelector(".navbar");
-//     if (window.scrollY > 50) {
-//         navbar.classList.add("navbar-scrolling");
-//     } else {
-//         navbar.classList.remove("navbar-scrolling");
-//     }
-// });
-
-
 //passed - working fine
 // nav bar for small displays
 document.addEventListener("DOMContentLoaded", () => {
