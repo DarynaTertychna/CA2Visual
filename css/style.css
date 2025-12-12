@@ -231,11 +231,6 @@ body.dark-theme .theme-switch-inner {
     opacity: 1;
 }
 
-/* .theme-icon-moon {
-    opacity: 1;
-} */
-
-
 /* switch-knob */
 .theme-switch-knob {
     position: absolute;
@@ -377,12 +372,6 @@ body.dark-theme .education-mod.active::after {
     background: #fff;
 }
 
-
-
-body.dark-theme .timeline-line {
-    background: rgba(255,255,255,0.12);
-}
-
 .infrow {
     position: relative;
     margin-bottom: 1.75rem;
@@ -516,16 +505,6 @@ body.dark-theme .tag {
 /* in case flex display can't handle mobile version */
 /* mobile */
 @media (max-width: 768px) {
-    .work-timeline {
-        padding-right: 0;
-        padding-left: 32px;
-    }
-
-    .timeline-line {
-        right: auto;
-        left: 16px;
-    }
-
     .infcard {
         margin-right: 0;
         margin-left: 40px;
@@ -545,12 +524,6 @@ body.dark-theme .tag {
 
 /* contact form */
 
-.contact-subtitle {
-    letter-spacing: 3px;
-    font-size: 0.9rem;
-    opacity: 0.6;
-}
-
 .contact-title {
     font-size: 2.3rem;
     font-weight: bold;
@@ -564,47 +537,9 @@ body.dark-theme .tag {
     font-size: 1rem;
 }
 
-/* contact form left*/
 
-.contact-form {
-    background: rgba(0, 0, 0, 0.05);   /* greyish, but NEED TO CHECK!!! maybe solft green? */
-    border-radius: 14px;
-    padding: 18px 22px;
-    margin-bottom: 16px;
-    transition: transform .2s ease, box-shadow .2s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
 
-.contact-form:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-}
-
-.contact-form-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(255,150,0,0.25); /* warm orange matching your theme */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    margin-right: 15px;
-}
-
-.contact-form-title {
-    font-size: 1.1rem;
-    margin-bottom: 2px;
-    font-weight: 600;
-}
-
-.contact-form-text {
-    opacity: 0.7;
-    margin: 0;
-    font-size: 0.95rem;
-}
-
-/* Here is my contact form right */
+/* Here is my contact form */
 
 .contact-input,
 .contact-textarea {
@@ -643,11 +578,6 @@ body.dark-theme .tag {
 }
 
 
-body.dark-theme .nav-weather {
-    color: #ffffff;
-}
-
-
 /* picture in my project size */
 .picture-size {
     width: 100%;
@@ -668,17 +598,6 @@ body.dark-theme .nav-weather {
     width: 50px;
     height: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* my contact me button, comment out if not working and  I must return return PREVIOUS SIMPLE FORM !!!!!!*/
 

@@ -16,19 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
-
-//passed - working fine
+//scrolling, but need a fix? add to ccs maybe?
 // https://www.w3schools.com/jsref/prop_win_scrolly.asp
-window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".navbar");
-    
-    if (window.scrollY > 50) {
-        navbar.classList.add("navbar-scrolled");
-    } else {
-        navbar.classList.remove("navbar-scrolled");
-    }
-});
+// window.addEventListener("scroll", function () {
+//     const navbar = document.querySelector(".navbar");
+//     if (window.scrollY > 50) {
+//         navbar.classList.add("navbar-scrolling");
+//     } else {
+//         navbar.classList.remove("navbar-scrolling");
+//     }
+// });
 
 
 //passed - working fine
@@ -69,8 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //passed - working fine
 // fix to smooth scrool one section
+// reference https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 document.addEventListener("DOMContentLoaded", () => 
     {
+    // if (!btn) return;
     const btn = document.getElementById("backToTHETop");
 
     btn.addEventListener("click", () => 
@@ -104,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () =>
 
 
 //passed - working fine (knob???)
-// function for light or dark theme switch 
+// function for light or dark theme switch (need to try without know, maybe will be looking good)
 document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById("themeSwitch");
 
@@ -131,11 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
 //passed - working fine
 document.addEventListener("DOMContentLoaded", () => {
     const lens = document.getElementById("magnifyGlass");
-    const magnifyBtn = document.getElementById("magnifyBtn");
+    const magnifyButtn = document.getElementById("magnifyButtn");
 
     let magnifyActive = false;
 
-    magnifyBtn.addEventListener("click", () => {
+    magnifyButtn.addEventListener("click", () => {
         magnifyActive = !magnifyActive;
 
         if (magnifyActive) {
@@ -187,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // 29c8736430e290d03ec9676e1dd1569a
 // weather dynamic feature
 // Dublin for my own location
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
     const weatherShow = document.getElementById("weather");
     if (!weatherShow) return;
 
@@ -209,6 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Weather API error:", res.status);
                 return;
             }
+            // else if ()
 
             return res.json();
 
@@ -222,33 +222,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const description = data.weather[0].description || "";
 
                 let icon = "⛅";
-                const d = description.toLowerCase();
+                const ic = description.toLowerCase();
 
-                if (d.includes("rain")) icon = "☔";
-                else if (d.includes("clear")) icon = "🌞";
-                else if (d.includes("snow")) icon = "⛄";
-                else if (d.includes("storm") || d.includes("thunder")) icon = "🌪️";
-                else if (d.includes("cloud")) icon = "☁️";
+                if (ic.includes("rain")) icon = "☔";
+                else if (ic.includes("clear")) icon = "🌞";
+                else if (ic.includes("snow")) icon = "⛄";
+                else if (ic.includes("storm") || ic.includes("thunder")) icon = "🌪️";
+                else if (ic.includes("cloud")) icon = "☁️";
 
                 weatherShow.textContent = `${city}: ${temp}°C ${icon}`;
         })
-        .catch(err => console.log("Weather isn't found", err));
+        .catch(err => console.log("Weather isn't found", err));   //handling errors
 });
 
-//passed - working fine
-// message after submit contact info and message to me
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("modalContactForm"); //by ID
-    if (!form) return;
-
-    form.addEventListener("submit", function (f) {
-        f.preventDefault(); // it to stop my page from reloading
-
-        alert("Your message was sent! Wait for an answer shortly!");
-
-        form.reset(); // resetting my forsm and cleaning whole thing
-    });
-});
 
 //passed - working fine
 // references: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
@@ -257,13 +243,14 @@ document.addEventListener("DOMContentLoaded", () => {
 // https://www.w3schools.com/js/js_htmldom_events.asp
 // contact me bytton near magnifying glass
 // message opens twice, though I don't have double function???
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
     const floatingButton = document.getElementById("contactFloatBtn");
     const overlay = document.getElementById("contactOverlay"); //over my background and everything
     const xButton = overlay ? overlay.querySelector(".close-btn") : null;
     const contactMelForm = document.getElementById("modalContactForm");
 
     if (!overlay) return;
+    // if (floatingButton) return;
 
     const openForm = () => {
         overlay.classList.add("show");
@@ -296,3 +283,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+// referencec https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
